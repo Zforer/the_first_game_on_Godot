@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8avcesx3fmo6"]
+
+[ext_resource type="Script" uid="uid://cg6mckcspixug" path="res://scene/Spawner/enemy_spawner.gd" id="1_mu6er"]
+[ext_resource type="PackedScene" uid="uid://ba3005la24k0n" path="res://scene/pumpkin/pumpkin.tscn" id="2_ub6bs"]
+
+[node name="EnemySpawner" type="Node"]
+script = ExtResource("1_mu6er")
+pumpkin_scene = ExtResource("2_ub6bs")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

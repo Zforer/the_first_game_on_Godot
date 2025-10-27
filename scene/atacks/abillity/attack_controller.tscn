@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bii4bqgcqtqbo"]
+
+[ext_resource type="Script" uid="uid://qdqtqgoeotrt" path="res://scene/atacks/abillity/attack_controller.gd" id="1_sntln"]
+[ext_resource type="PackedScene" uid="uid://dpv0wr26g87b6" path="res://scene/atacks/abillity/attack_abillity.tscn" id="2_a6x0n"]
+
+[node name="Attack_Controller" type="Node2D"]
+position = Vector2(-16, 1)
+script = ExtResource("1_sntln")
+attack_ability = ExtResource("2_a6x0n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
