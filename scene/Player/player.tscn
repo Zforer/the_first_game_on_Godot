@@ -1,16 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2t0t5na1h2ik"]
+[gd_scene load_steps=9 format=3 uid="uid://b2t0t5na1h2ik"]
 
 [ext_resource type="Texture2D" uid="uid://da2gbs3ag8srr" path="res://scene/Player/wizzard_f_hit_anim_f0.png" id="1_8uvvx"]
 [ext_resource type="Script" uid="uid://b68iedhgfsmyp" path="res://scene/Player/player.gd" id="1_41w3l"]
-[ext_resource type="Texture2D" uid="uid://bnw55ve8ihrb1" path="res://scene/Player/wizzard_f_idle_anim_f0.png" id="1_wbm5k"]
-[ext_resource type="PackedScene" uid="uid://bii4bqgcqtqbo" path="res://scene/atacks/abillity/attack_controller.tscn" id="2_co0lx"]
-[ext_resource type="Texture2D" uid="uid://dmpa6mkiftbjs" path="res://scene/Player/wizzard_f_idle_anim_f1.png" id="2_fd65k"]
-[ext_resource type="Texture2D" uid="uid://b8fq2ubvhs3aa" path="res://scene/Player/wizzard_f_idle_anim_f2.png" id="3_7fv2l"]
-[ext_resource type="Texture2D" uid="uid://d0nvmm100fjrg" path="res://scene/Player/wizzard_f_idle_anim_f3.png" id="4_fra3v"]
-[ext_resource type="Texture2D" uid="uid://dqllug2fywrco" path="res://scene/Player/wizzard_f_run_anim_f0.png" id="6_41w3l"]
-[ext_resource type="Texture2D" uid="uid://by0lbe6m6m2u8" path="res://scene/Player/wizzard_f_run_anim_f1.png" id="7_co0lx"]
-[ext_resource type="Texture2D" uid="uid://sc633holdbnx" path="res://scene/Player/wizzard_f_run_anim_f2.png" id="8_kidpo"]
-[ext_resource type="Texture2D" uid="uid://farl2qwe6x16" path="res://scene/Player/wizzard_f_run_anim_f3.png" id="9_rvfjl"]
+[ext_resource type="Texture2D" uid="uid://br35qaaonvfbu" path="res://scene/Player/рыцарь_1.png" id="4_co0lx"]
+[ext_resource type="Texture2D" uid="uid://cpf8js1mpchuw" path="res://scene/Player/рыцарь_2.png" id="5_kidpo"]
+[ext_resource type="Texture2D" uid="uid://cwbuiw5oh8dfd" path="res://scene/Player/рыцарь_3.png" id="6_rvfjl"]
+[ext_resource type="Texture2D" uid="uid://dys50fesqojm3" path="res://scene/Player/рыцарь_4.png" id="7_i0aa2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpmh7"]
 animations = [{
@@ -24,59 +19,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wbm5k")
+"texture": ExtResource("4_co0lx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_fd65k")
+"texture": ExtResource("5_kidpo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_7fv2l")
+"texture": ExtResource("6_rvfjl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fra3v")
+"texture": ExtResource("7_i0aa2")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 7.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_41w3l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_co0lx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_kidpo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_rvfjl")
-}],
+"frames": [],
 "loop": true,
-"name": &"run",
+"name": &"run_right",
 "speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uvvx"]
-radius = 5.0
+radius = 17.029387
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 script = ExtResource("1_41w3l")
 
-[node name="AbilityManager" type="Node" parent="."]
-
-[node name="Attack_Controller" parent="AbilityManager" instance=ExtResource("2_co0lx")]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14.025)
+position = Vector2(2, -31)
 sprite_frames = SubResource("SpriteFrames_dpmh7")
-animation = &"hit"
+animation = &"run_right"
 autoplay = "idle"
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(44, -23)
 shape = SubResource("CircleShape2D_8uvvx")
 
 [node name="Camera2D" type="Camera2D" parent="."]

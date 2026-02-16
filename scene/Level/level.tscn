@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dv8434jr0flv0"]
+[gd_scene load_steps=7 format=4 uid="uid://dv8434jr0flv0"]
 
 [ext_resource type="PackedScene" uid="uid://b8avcesx3fmo6" path="res://scene/Spawner/enemy_spawner.tscn" id="1_aiioc"]
 [ext_resource type="PackedScene" uid="uid://wea0ec7prtsp" path="res://scene/UI/arena_time_ui.tscn" id="1_kojfn"]
 [ext_resource type="TileSet" uid="uid://japf24g6hor3" path="res://scene/Level/world.tres" id="1_m33rt"]
 [ext_resource type="PackedScene" uid="uid://b2t0t5na1h2ik" path="res://scene/Player/player.tscn" id="2_485ph"]
 [ext_resource type="PackedScene" uid="uid://clt73yr36xlpv" path="res://scene/Manager/arena_time_manager.tscn" id="2_ao10f"]
+[ext_resource type="PackedScene" uid="uid://bi57l1jebg83t" path="res://scene/UI/hp_ui.tscn" id="6_1e2t7"]
 
 [node name="level" type="Node"]
 
@@ -22,3 +23,5 @@ tile_set = ExtResource("1_m33rt")
 
 [node name="Player" parent="." instance=ExtResource("2_485ph")]
 position = Vector2(256, 287)
+
+[node name="HP_UI" parent="." instance=ExtResource("6_1e2t7")]

@@ -1,54 +1,31 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba3005la24k0n"]
+[gd_scene load_steps=7 format=3 uid="uid://ba3005la24k0n"]
 
-[ext_resource type="Texture2D" uid="uid://ce50suck0latd" path="res://scene/pumpkin/pumpkin_dude_idle_anim_f0.png" id="1_8ek78"]
 [ext_resource type="Script" uid="uid://bkqp8oapv5hro" path="res://scene/pumpkin.gd" id="1_ponkk"]
-[ext_resource type="Texture2D" uid="uid://cy44rsuuap2w4" path="res://scene/pumpkin/pumpkin_dude_idle_anim_f1.png" id="2_ponkk"]
-[ext_resource type="Texture2D" uid="uid://cuea2wgifo7he" path="res://scene/pumpkin/pumpkin_dude_idle_anim_f2.png" id="3_andrs"]
-[ext_resource type="Texture2D" uid="uid://crbi6ti0clike" path="res://scene/pumpkin/pumpkin_dude_idle_anim_f3.png" id="4_wfr7t"]
-[ext_resource type="Texture2D" uid="uid://e8lyb4a1q7t7" path="res://scene/pumpkin/pumpkin_dude_run_anim_f0.png" id="5_6sm7a"]
-[ext_resource type="Texture2D" uid="uid://d37s7xfo6m3up" path="res://scene/pumpkin/pumpkin_dude_run_anim_f1.png" id="6_v01h1"]
-[ext_resource type="Texture2D" uid="uid://bq1ncj8mc8arx" path="res://scene/pumpkin/pumpkin_dude_run_anim_f2.png" id="7_f6dv2"]
-[ext_resource type="Texture2D" uid="uid://dr2iu6nr8qy" path="res://scene/pumpkin/pumpkin_dude_run_anim_f3.png" id="8_cw56t"]
+[ext_resource type="Texture2D" uid="uid://blcgotnyey35m" path="res://scene/pumpkin/призрак1.png" id="2_751x1"]
+[ext_resource type="Texture2D" uid="uid://rc0vasr0m7iv" path="res://scene/pumpkin/призрак2.png" id="3_ychk1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3csq0"]
+radius = 6.4498057
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_andrs"]
-radius = 5.0
+radius = 8.062258
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uffjd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8ek78")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ponkk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_andrs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_wfr7t")
+"texture": ExtResource("2_751x1")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 7.0
+"name": &"run_left",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_6sm7a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v01h1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_f6dv2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_cw56t")
+"texture": ExtResource("3_ychk1")
 }],
 "loop": true,
-"name": &"run",
+"name": &"run_right",
 "speed": 7.0
 }]
 
@@ -66,13 +43,13 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_3csq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_andrs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_uffjd")
-animation = &"idle"
-autoplay = "idle"
+animation = &"run_left"
+autoplay = "run_left"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

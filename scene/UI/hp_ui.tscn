@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi57l1jebg83t"]
+
+[ext_resource type="Texture2D" uid="uid://b6tgwu1dr07rs" path="res://assets/Сердце.png" id="1_axmtt"]
+[ext_resource type="Texture2D" uid="uid://b0ew7posycukl" path="res://assets/Пустое_сердце.png" id="2_mr0mr"]
+[ext_resource type="Script" uid="uid://crf5pem14kfou" path="res://scene/UI/1_heart.gd" id="3_mr0mr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1emxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_axmtt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mr0mr")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[node name="HP_UI" type="CanvasLayer"]
+
+[node name="1_heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(84, 15)
+sprite_frames = SubResource("SpriteFrames_1emxa")
+script = ExtResource("3_mr0mr")
+
+[node name="2_heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(67, 15)
+sprite_frames = SubResource("SpriteFrames_1emxa")
+
+[node name="3_heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(50, 15)
+sprite_frames = SubResource("SpriteFrames_1emxa")
+
+[node name="4_heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(33, 15)
+sprite_frames = SubResource("SpriteFrames_1emxa")
+
+[node name="5_heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 15)
+sprite_frames = SubResource("SpriteFrames_1emxa")
