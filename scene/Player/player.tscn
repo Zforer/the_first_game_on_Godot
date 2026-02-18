@@ -1,18 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2t0t5na1h2ik"]
+[gd_scene load_steps=16 format=3 uid="uid://b2t0t5na1h2ik"]
 
-[ext_resource type="Texture2D" uid="uid://da2gbs3ag8srr" path="res://scene/Player/wizzard_f_hit_anim_f0.png" id="1_8uvvx"]
 [ext_resource type="Script" uid="uid://b68iedhgfsmyp" path="res://scene/Player/player.gd" id="1_41w3l"]
 [ext_resource type="Texture2D" uid="uid://br35qaaonvfbu" path="res://scene/Player/рыцарь_1.png" id="4_co0lx"]
 [ext_resource type="Texture2D" uid="uid://cpf8js1mpchuw" path="res://scene/Player/рыцарь_2.png" id="5_kidpo"]
+[ext_resource type="Texture2D" uid="uid://b3e4j8ildvacs" path="res://scene/Player/рыцарь_run_right_1.png" id="6_8uvvx"]
+[ext_resource type="Texture2D" uid="uid://ceheqcfwhdnmf" path="res://scene/Player/рыцарь_run_left_1.png" id="6_i0aa2"]
 [ext_resource type="Texture2D" uid="uid://cwbuiw5oh8dfd" path="res://scene/Player/рыцарь_3.png" id="6_rvfjl"]
+[ext_resource type="Texture2D" uid="uid://cmbyasen4v8c1" path="res://scene/Player/рыцарь_run_right_2.png" id="7_41w3l"]
 [ext_resource type="Texture2D" uid="uid://dys50fesqojm3" path="res://scene/Player/рыцарь_4.png" id="7_i0aa2"]
+[ext_resource type="Texture2D" uid="uid://cvkuk42auxj82" path="res://scene/Player/рыцарь_run_left_2.png" id="7_sqcmh"]
+[ext_resource type="Texture2D" uid="uid://cimkiepunl7px" path="res://scene/Player/рыцарь_run_right_3.png" id="8_co0lx"]
+[ext_resource type="Texture2D" uid="uid://bwqdirsixy685" path="res://scene/Player/рыцарь_run_left_3.png" id="8_d52sb"]
+[ext_resource type="Texture2D" uid="uid://cfgkyho1hk0mw" path="res://scene/Player/рыцарь_run_left_4.png" id="9_38fwo"]
+[ext_resource type="Texture2D" uid="uid://btp6wbhsbkxc5" path="res://scene/Player/рыцарь_run_right_4.png" id="9_kidpo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpmh7"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_8uvvx")
-}],
+"frames": [],
 "loop": false,
 "name": &"hit",
 "speed": 5.0
@@ -34,10 +38,39 @@ animations = [{
 "name": &"idle",
 "speed": 7.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i0aa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sqcmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d52sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_38fwo")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8uvvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_41w3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_co0lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kidpo")
+}],
 "loop": true,
 "name": &"run_right",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uvvx"]
@@ -50,11 +83,11 @@ script = ExtResource("1_41w3l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -31)
 sprite_frames = SubResource("SpriteFrames_dpmh7")
-animation = &"run_right"
+animation = &"run_left"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(44, -23)
+position = Vector2(0, -18)
 shape = SubResource("CircleShape2D_8uvvx")
 
 [node name="Camera2D" type="Camera2D" parent="."]

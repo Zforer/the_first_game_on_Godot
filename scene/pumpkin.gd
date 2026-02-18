@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_speed = 50
+var max_speed = 100
 
 func _process(delta):
 	var direction = get_direction_to_player()
