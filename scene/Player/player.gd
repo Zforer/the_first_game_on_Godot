@@ -14,8 +14,10 @@ func _process(delta):
 		_animated_sprite.play("run_right")
 	elif Input.is_action_pressed("move_left"):
 		_animated_sprite.play("run_left")
-	#elif Input.is_action_pressed("move_ap"):
-		#_animated_sprite.play("run_ap")
+	elif Input.is_action_pressed("move_dawn"):
+		_animated_sprite.play("run_down")
+	elif Input.is_action_pressed("move_ap"):
+		_animated_sprite.play("run_up")
 	else:
 		_animated_sprite.play("idle")
 

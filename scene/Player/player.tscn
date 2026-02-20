@@ -1,18 +1,26 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2t0t5na1h2ik"]
+[gd_scene load_steps=24 format=3 uid="uid://b2t0t5na1h2ik"]
 
 [ext_resource type="Script" uid="uid://b68iedhgfsmyp" path="res://scene/Player/player.gd" id="1_41w3l"]
 [ext_resource type="Texture2D" uid="uid://br35qaaonvfbu" path="res://scene/Player/рыцарь_1.png" id="4_co0lx"]
 [ext_resource type="Texture2D" uid="uid://cpf8js1mpchuw" path="res://scene/Player/рыцарь_2.png" id="5_kidpo"]
 [ext_resource type="Texture2D" uid="uid://b3e4j8ildvacs" path="res://scene/Player/рыцарь_run_right_1.png" id="6_8uvvx"]
+[ext_resource type="Texture2D" uid="uid://cyuuksirwv3lg" path="res://scene/Player/рыцарь_run_down_1.png" id="6_38fwo"]
 [ext_resource type="Texture2D" uid="uid://ceheqcfwhdnmf" path="res://scene/Player/рыцарь_run_left_1.png" id="6_i0aa2"]
 [ext_resource type="Texture2D" uid="uid://cwbuiw5oh8dfd" path="res://scene/Player/рыцарь_3.png" id="6_rvfjl"]
+[ext_resource type="Texture2D" uid="uid://c8mu81ihh4c0v" path="res://scene/Player/рыцарь_run_down_2.png" id="7_3lkbw"]
 [ext_resource type="Texture2D" uid="uid://cmbyasen4v8c1" path="res://scene/Player/рыцарь_run_right_2.png" id="7_41w3l"]
 [ext_resource type="Texture2D" uid="uid://dys50fesqojm3" path="res://scene/Player/рыцарь_4.png" id="7_i0aa2"]
 [ext_resource type="Texture2D" uid="uid://cvkuk42auxj82" path="res://scene/Player/рыцарь_run_left_2.png" id="7_sqcmh"]
 [ext_resource type="Texture2D" uid="uid://cimkiepunl7px" path="res://scene/Player/рыцарь_run_right_3.png" id="8_co0lx"]
 [ext_resource type="Texture2D" uid="uid://bwqdirsixy685" path="res://scene/Player/рыцарь_run_left_3.png" id="8_d52sb"]
+[ext_resource type="Texture2D" uid="uid://c0lildfplkkjo" path="res://scene/Player/рыцарь_run_down_3.png" id="8_v67md"]
 [ext_resource type="Texture2D" uid="uid://cfgkyho1hk0mw" path="res://scene/Player/рыцарь_run_left_4.png" id="9_38fwo"]
+[ext_resource type="Texture2D" uid="uid://vyuxt5hu5c5j" path="res://scene/Player/рыцарь_run_down_4.png" id="9_e2vgy"]
 [ext_resource type="Texture2D" uid="uid://btp6wbhsbkxc5" path="res://scene/Player/рыцарь_run_right_4.png" id="9_kidpo"]
+[ext_resource type="Texture2D" uid="uid://cxwajgwu382sv" path="res://scene/Player/рыцарь_run_up_1.png" id="18_24qkx"]
+[ext_resource type="Texture2D" uid="uid://bmf5j6co1srd8" path="res://scene/Player/рыцарь_run_up_2.png" id="19_kjy44"]
+[ext_resource type="Texture2D" uid="uid://c4vvleqmutlvo" path="res://scene/Player/рыцарь_run_up_3.png" id="20_a1qhb"]
+[ext_resource type="Texture2D" uid="uid://bwmkdjctea1ye" path="res://scene/Player/рыцарь_run_up_4.png" id="21_rxjjq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dpmh7"]
 animations = [{
@@ -37,6 +45,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_38fwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3lkbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v67md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e2vgy")
+}],
+"loop": true,
+"name": &"run_down",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,6 +96,23 @@ animations = [{
 "loop": true,
 "name": &"run_right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_24qkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kjy44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_a1qhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rxjjq")
+}],
+"loop": true,
+"name": &"run_up",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uvvx"]
@@ -83,7 +125,7 @@ script = ExtResource("1_41w3l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -31)
 sprite_frames = SubResource("SpriteFrames_dpmh7")
-animation = &"run_left"
+animation = &"run_up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
